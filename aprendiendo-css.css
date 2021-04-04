@@ -1,0 +1,53 @@
+/*Esto es un comentario en CSS*/
+/* #para los id, .para las clases, *para todo un parrafo */
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+#wrapper{
+    width: 950px; /*Ancho*/
+    background-color:grey; /*color relleno*/
+    margin: 0px auto;
+    padding: 15px;
+}
+
+#header{
+    min-height: 150px;/*Altura minima*/
+    background-color: green;
+    margin-bottom: 15px;
+}
+
+#navigation{
+    min-height: 300px;
+    width: 200px;
+    background-color: blue;
+    display: inline-block; /*En bloque con main content*/
+    vertical-align: top; /*Lo alinea hacia arriba(top) verticalmente*/
+}
+
+#main_content{
+    min-height: 400px; 
+    width: 700px; 
+    background-color: red; 
+    display: inline-block; /*En bloque con navigation*/
+    margin-left: 15px; /*Margen externo izquierdo (contra el azul)*/
+    padding: 15px; /*Margen interno (contra los amarillos)*/
+}
+
+.subcontents{
+    min-height: 200px;
+    width: 210px;
+    background-color: yellow;
+    display: inline-block; /*En bloque entre todas sus clases*/
+    margin-right: 15px; /*Margen externo derecho (entre los mismos amarillos)*/
+    margin-bottom: 15px; /*Margen externo abajo (contra el morado)*/
+}
+
+#advertisement{
+    min-height: 120px;
+    width: 660px;
+    background-color: purple;
+    /*margin-top: 15px; Esta es otra opcion si no ponemos el margin-bottom arriba*/
+}

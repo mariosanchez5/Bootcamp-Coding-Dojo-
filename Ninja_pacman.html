@@ -1,0 +1,179 @@
+<html>
+<head>
+    <title>NinjaMan</title>
+    <style type="text/css">
+        * {
+            margin:0; 
+            padding:0;
+        }
+        .wall {
+            background-color: blue;
+            height: 40px;
+            width: 40px;
+            display: inline-block; 
+        }
+        .sushi {
+            background-color: black; 
+            height: 40px;
+            width: 40px;
+            display: inline-block; 
+            background-image: url("/Users/mariosanchez/Documents/Dojo coding/ninjaman/sushi.png");
+            background-size: contain;
+        }
+        .onigiri {
+            background-color: black; 
+            height: 40px;
+            width: 40px;
+            display: inline-block; 
+            background-image: url("/Users/mariosanchez/Documents/Dojo coding/ninjaman/onigiri.png");
+            background-size: contain;
+        }
+        .black{
+            background-color: black;
+            height: 40px;
+            width: 40px;
+            display: inline-block;
+        }
+        #ninjaman {
+            background-color: black;
+            height: 40px;
+            width: 40px;
+            display: inline-block;
+            background-image: url("/Users/mariosanchez/Documents/Dojo coding/ninjaman/ninja.gif");
+            background-size: contain;
+            position: absolute;
+            left: 40px;
+            top: 40px;
+        }
+        .fantasma {
+            background-color: black;
+            height: 40px;
+            width: 40px;
+            display: inline-block;
+            background-image: url("/Users/mariosanchez/Documents/Dojo coding/ninjaman/red.gif");
+            background-size: contain;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="world"></div>
+    <div id="ninjaman"></div>
+<footer>
+    <p>By Mario</p>
+</footer>
+
+</body>
+<script type="text/javascript">
+
+    //probando
+    var leftValue = 40, topValue=40
+    var cont = 0;
+    var ninjaman = {
+        x:1, //Ya que luego se multiplicara por los 40px
+        y:1
+    }
+    //NOTA creo que estaba bien como lo estaba haciendo antes
+    //Meter cada indice del World dentro de los if
+    //Pero debo fijarme en su los x o y estan sumando o restando
+    document.onkeydown = function(e){
+            console.log(e)
+            function update(){
+                document.getElementById("ninjaman").style.left=ninjaman.x * 40 +"px";
+                document.getElementById("ninjaman").style.top=ninjaman.y * 40+"px";
+                console.log("Contador=",cont)
+            }
+            if(e.keyCode == 37){ // LEFT
+                if(world[ninjaman.y][ninjaman.x-1]!=1){
+                    if (world[ninjaman.y][ninjaman.x-1] ==2){
+                        cont = cont +10;
+                    }
+                    else if (world[ninjaman.y][ninjaman.x-1] ==3){
+                        cont = cont +20;
+                    }
+                    ninjaman.x--;
+                } 
+            }
+
+            else if (e.keyCode == 39) {// RIGHT
+                if(world[ninjaman.y][ninjaman.x+1]!=1){ //Al comienzo Y=1 e X al presionar una a la derecha es X=2
+                    if (world[ninjaman.y][ninjaman.x+1] ==2){
+                        cont = cont +10;
+                    }
+                    else if (world[ninjaman.y][ninjaman.x+1] ==3){
+                        cont = cont +20;
+                    }
+                    ninjaman.x++; // Por lo cual x toma el valor de 2, quedandose en esa posicion
+                }
+            }
+
+            else if (e.keyCode == 40){// DOWN
+                if(world[ninjaman.y+1][ninjaman.x]!=1){
+                    if (world[ninjaman.y+1][ninjaman.x] ==2){
+                        cont = cont +10;
+                    }
+                    else if (world[ninjaman.y+1][ninjaman.x] ==3){
+                        cont = cont +20;
+                    }
+                    ninjaman.y++;
+                }
+            }
+
+            else if (e.keyCode == 38){// UP
+                if(world[ninjaman.y-1][ninjaman.x]!=1){
+                    if (world[ninjaman.y-1][ninjaman.x] ==2){
+                        cont = cont +10;
+                    }
+                    else if (world[ninjaman.y-1][ninjaman.x] ==3){
+                        cont = cont +20;
+                    }
+                    ninjaman.y--;
+                }
+            }
+            world[ninjaman.y][ninjaman.x] =0; //Aqui le dice que la posicon que tome lo deje en blanco
+            update()
+            draWorld()
+    }
+
+    //probando
+
+
+    var world = [
+        [1,1,1,1,1,1,1,1,1,1],
+        [1,0,2,2,2,2,2,2,3,1],
+        [1,2,1,2,2,1,1,1,2,1],
+        [1,2,2,2,1,2,2,2,2,1],
+        [1,1,3,2,1,2,1,2,2,1],
+        [1,2,1,2,2,2,1,1,2,1],
+        [1,2,2,2,1,3,2,2,2,1],
+        [1,3,2,2,1,2,1,1,2,1],
+        [1,2,1,2,1,2,1,1,2,1],
+        [1,2,2,2,2,2,3,2,4,1],
+        [1,1,1,1,1,1,1,1,1,1],
+    ];
+    var worldDict = {
+        0:"black",
+        1:"wall",
+        2:"sushi",
+        3:"onigiri",
+        4:"fantasma"
+    }
+
+    function draWorld(){
+        output ="";
+        for(var row=0; row<world.length;row++){
+            output +="<div class=row></div>"
+            for(var x=0;x<world[row].length;x++){
+                output += "<div class='"+ worldDict[world[row][x]]+"'></div>"
+            }
+            output += "</div>"
+        }
+        document.getElementById("world").innerHTML = output;
+    }
+
+    draWorld()
+
+</script>
+
+</html>

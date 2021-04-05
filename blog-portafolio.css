@@ -1,0 +1,136 @@
+/* { outline: 1px dotted red; }*/
+
+.container{
+    height: 1110px;
+    width: 1000px;
+    background-color: black;
+}
+
+.cabecera{
+    width: 1000px;
+    height: 100px;
+    background-color: rgb(245, 237, 237);
+}
+
+#foot{
+    width: 1000px;
+    height: 80px;
+    background-color: rgb(245, 237, 237);
+}
+
+#acerca{
+    width: 1000px;
+    height: 400px;
+    background-color: rgb(53, 22, 22);
+}
+
+.paginas{
+    width: 1000px;
+    height: 625px;
+    background-color: rgb(53, 22, 22);
+}
+
+#ache1{
+    width: 300px;
+    height: 50px;
+    background-color: rgb(245, 237, 237);
+    display: inline-block;
+    margin: 10px;
+    padding: 10px;
+}
+
+#ache2{
+    width: 400px;
+    height: 50px;
+    background-color: rgb(245, 237, 237);
+    display: inline-block;
+    margin: 10px;
+    padding: 10px;
+    margin-left: 220px;
+}
+
+#imagen{
+    width: 400px;
+    height: 290px;
+    background-color: gray;
+    display: inline-block;
+    vertical-align: top;
+    margin: 20px;
+    padding: 5px;
+}
+
+#descripcion{
+    width: 470px;
+    height: 280px;
+    background-color: rgb(245, 237, 237);
+    display: inline-block;
+    margin: 20px;
+    padding: 10px;
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+.pag{
+    width: 280px;
+    height: 550px;
+    background-color: white;
+    display: inline-block;
+    margin: 20px;
+    padding: 20px;
+    vertical-align: top;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+}
+
+#ache3{
+    height: 40px;
+    background-color: gray;
+    color: white;
+    margin-top: 0px;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+#parrafo{
+    padding: 10px;
+    padding-top: 0px;
+}
+
+.imgn{
+    width: 250px;
+    height: 150px;
+}
+
+.titulos{
+    margin:0;
+    padding: 10px;
+    background-color: gray;
+    color: white;
+}
+
+.circ{
+    height: 30px;
+    width: 30px;
+    padding: 7px;
+}
+
+.cirpeq{
+    height: 15px;
+    width: 15px;
+    padding: 7px;
+}
+
+.pie{
+    text-align: center;
+}
+
+.ache4{
+    height: 30px;
+    margin-left: 90px;
+    margin-top: 20px;
+    background-color: green;
+    color: white;
+    border-radius: 5px;
+}
